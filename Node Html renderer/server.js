@@ -4,7 +4,7 @@ var module2 = require('./module2');
 var fs = require('fs');
 
 function onRequest(request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.writeHead(200, {'Content-Type': 'text/html'});
   response.write(module2.myString);
   module2.myFunction(); /* here we need the parenthesis because we are ex
   ecuting it */
@@ -18,7 +18,7 @@ function onRequest(request, response) {
     }
     response.end();
   });
-  
+
 }
 
 http.createServer(onRequest).listen(8000);
